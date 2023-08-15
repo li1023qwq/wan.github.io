@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>首页</title>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>首页</title>
+  <script src="../../js/mui.min.js"></script>
+  <link href="../../css/mui.min.css" rel="stylesheet" />
+  
+  <style>
+    /* CSS样式 */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url(../../images/bj.jpg); /* 替换为你自己的背景图像 */
+      background-size: cover;
+      /* background-position: center; */
+    }
+
+    .navbar {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      background-color: rgba(255, 255, 255, 0.3); /* 设置半透明背景颜色 */
+      padding: 10px;
+      border-radius: 20px;
+      display: flex;
+      justify-content: space-between;
+      backdrop-filter: blur(10px); /* 添加毛玻璃效果 */
+    }
+
+    
+  </style>
+  
+  <style>
+      /* CSS样式 */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #ffffff;
+        padding: 0px;
+      }
+  
+      .header {
+        text-align: center;
+        position: relative;
+      }
+  
+      .slideshow {
+        max-width: 100%;
+        height: auto;
+      }
+  
+      .slideshow img {
+        display: none;
+        max-width: 100%;
+        height: auto;
+      }
+  
+      .slideshow img.active {
+        display: block;
+      }
+  
+      .search-container {
+        text-align: center;
+        margin-top: 20px;
+      }
+  
+      .search-container input[type="text"] {
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 3px;
+        border: 1px solid #cccccc;
+        width: 30px;
+        max-width: 100%;
+      }
+      .navigation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+  
+      .navigation-item {
+        flex-basis: 25%;/* 功能选择区域 */
+        margin: 10px;
+        text-align: center;
+		background-color: rgba(255, 255, 255, 0.3); /* 设置半透明背景颜色 */
+        padding: 5px;
+		padding: 10px;
+		border-radius: 20px;
+		display: flex;
+		justify-content: space-between;
+		backdrop-filter: blur(10px); /* 添加毛玻璃效果 */
+      }
+  
+      .navigation-item img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+      }
+  
+      .navigation-item p {
+        margin-top: 5px;
+        cursor: pointer;
+      }
+  
+      .scroll-text {
+        font-size: 18px;
+        text-align: center;
+        margin-top: 20px;
+        overflow: hidden;
+      }
+  
+      .scroll-text span {
+        display: inline-block;
+        margin-right: 1em;
+        animation: scroll 15s linear infinite;
+      }
+  
+      @keyframes scroll {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+  </style>
+
+     <style>
+         .notification {
+             /* background-color: #ffffff; */
+             padding: 10px;
+             margin-bottom: 10px;
+             border: 1px solid #ccc;
+         }
+         .notification .title {
+             font-weight: bold;
+             margin-bottom: 5px;
+         }
+         .notification .message {
+             margin-bottom: 5px;
+         }
+         .notification .timestamp {
+             font-size: 0.8em;
+             color: #787878;
+         }
+         .notification button {
+             margin-top: 10px;
+         }
+     </style>
+</head>
+<body>
+	<div class="header">
+		<!-- <div class="navigation-item">
+	    <h1>首页</h1>
+		</div> -->
+		<div class="navigation-item">
+		<div class="scroll-text"><!-- 滚动文字 -->
+			<span>会有突如其来的惊喜，始料不及的运气！</span>
+		</div>
+		</div>
+
+	<div id="notification-container"></div>
+	
+	<div class="navigation-item">
+	<script>
+	    function createNotification(title, message, timestamp) {
+	        const container = document.getElementById('notification-container');
+	
+	        const notification = document.createElement('div');
+	        notification.className = 'notification';
+	
+	        const titleElem = document.createElement('div');
+	        titleElem.className = 'title';
+	        titleElem.textContent = title;
+	
+	        const messageElem = document.createElement('div');
+	        messageElem.className = 'message';
+	        messageElem.textContent = message;
+	
+	        const timestampElem = document.createElement('div');
+	        timestampElem.className = 'timestamp';
+	        timestampElem.textContent = timestamp;
+	
+	        const button = document.createElement('button');
+	        button.textContent = '查看';
+	        button.addEventListener('click', function() {
+	            // 在按钮点击事件中执行相应的操作
+	            alert('我！秦始皇！打钱！懂？');
+	        });
+	
+	        notification.appendChild(titleElem);
+	        notification.appendChild(messageElem);
+	        notification.appendChild(timestampElem);
+	        notification.appendChild(button);
+	
+	        container.appendChild(notification);
+	    }
+	
+	    // 示例：动态生成一个通知，带有按钮和点击事件
+	    createNotification('新消息', '这是一条新消息的内容。', '2023-08-13 3:30 PM');
+	</script>
+	</div>
+	
+  <div class="navbar">
+    <div class="navigation-item">
+      <a href="../../index.html" target="_blank">
+        <img src="../../images/logo/logo.png" alt="首页">
+        
+      </a >
+    </div>
+    <div class="navigation-item">
+      <a href="../../html/index/xx.html" target="_blank">
+        <img src="../../images/logo/xx.png" alt="消息">
+        
+      </a >
+    </div>
+    <div class="navigation-item">
+      <a href="../../html/index/gn.html" target="_blank">
+        <img src="../../images/logo/gn.png" alt="功能">
+        
+      </a >
+    </div>
+    <div class="navigation-item">
+      <a href="../../login.html" target="_blank">
+        <img src="../../images/logo/my.png" alt="我的">
+        
+      </a >
+    </div>
+  </div>
+</body>
+</html>

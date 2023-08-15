@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>首页</title>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>首页</title>
+  <script src="js/mui.min.js"></script>
+  <link href="css/mui.min.css" rel="stylesheet" />
+  
+  <style>
+    /* CSS样式 */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url(images/bj.jpg); /* 替换为你自己的背景图像 */
+      background-size: cover;
+      /* background-position: center; */
+    }
+
+    .navbar {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      background-color: rgba(255, 255, 255, 0.3); /* 设置半透明背景颜色 */
+      padding: 10px;
+      border-radius: 20px;
+      display: flex;
+      justify-content: space-between;
+      backdrop-filter: blur(10px); /* 添加毛玻璃效果 */
+    }
+
+    
+  </style>
+  
+  <style>
+      /* CSS样式 */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #ffffff;
+        padding: 0px;
+      }
+  
+      .header {
+        text-align: center;
+        position: relative;
+      }
+  
+      .slideshow {
+        max-width: 100%;
+        height: auto;
+      }
+  
+      .slideshow img {
+        display: none;
+        max-width: 100%;
+        height: auto;
+      }
+  
+      .slideshow img.active {
+        display: block;
+      }
+  
+      .search-container {
+        text-align: center;
+        margin-top: 20px;
+      }
+  
+      .search-container input[type="text"] {
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 3px;
+        border: 1px solid #cccccc;
+        width: 30px;
+        max-width: 100%;
+      }
+      .navigation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+  
+      .navigation-item {
+        flex-basis: 25%;/* 功能选择区域 */
+        margin: 10px;
+        text-align: center;
+		background-color: rgba(255, 255, 255, 0.3); /* 设置半透明背景颜色 */
+        padding: 5px;
+		padding: 10px;
+		border-radius: 20px;
+		display: flex;
+		justify-content: space-between;
+		backdrop-filter: blur(10px); /* 添加毛玻璃效果 */
+      }
+  
+      .navigation-item img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+      }
+  
+      .navigation-item p {
+        margin-top: 5px;
+        cursor: pointer;
+      }
+  
+      .scroll-text {
+        font-size: 18px;
+        text-align: center;
+        margin-top: 20px;
+        overflow: hidden;
+      }
+  
+      .scroll-text span {
+        display: inline-block;
+        margin-right: 1em;
+        animation: scroll 15s linear infinite;
+      }
+  
+      @keyframes scroll {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+  </style>
+  
+  <!-- 滚动图片 -->
+ <script>
+      // JavaScript代码
+      window.addEventListener('load', function() {
+        var slideshowImages = document.querySelectorAll('.slideshow img');
+        var currentImageIndex = 0;
+        var interval = setInterval(changeImage, 3000); // 自动切换间隔时间（毫秒）
+  
+        function changeImage() {
+          slideshowImages[currentImageIndex].classList.remove('active');
+          currentImageIndex = (currentImageIndex + 1) % slideshowImages.length;
+          slideshowImages[currentImageIndex].classList.add('active');
+      }
+  
+      for (var i = 0; i < slideshowImages.length; i++) {
+          slideshowImages[i].addEventListener('click', function() {
+            clearInterval(interval); // 停止自动切换
+            slideshowImages[currentImageIndex].classList.remove('active');
+            currentImageIndex = Array.from(slideshowImages).indexOf(this);
+            slideshowImages[currentImageIndex].classList.add('active');
+          });
+      }
+      });
+  </script>
+  
+<!-- 轮盘时间 -->
+<!--    <style>
+        html{
+            
+            color: #ffffff;
+            font-size: 10px;
+            overflow:hidden;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        span{
+            display: block;
+            float: left;
+        }
+        .on{
+            color: #ffbf1d;
+        }
+        .wrapper{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left:50%;
+            top: 60%;
+            margin-top: -100px;
+            margin-left: -100px;
+        }
+        .wrapper .timebox{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            top: 0;
+            left:0;
+            border-radius: 100%;
+            transition: all 0.5s;
+        }
+        .timebox span{
+            transition: all 0.5s;
+            float: left;
+        }
+        .wrapper  .timebox span{
+            position: absolute;
+            left:50%;
+            top:50%;
+            width: 40px;
+            height: 18px;
+            margin-top: -9px;
+            margin-left: -20px;
+            text-align: right;
+        }
+ 
+    </style> -->
+
+</head>
+<body>
+	<div class="header">
+		<div class="navigation-item">
+	    <h1>首页</h1>
+		</div>
+		<div class="navigation-item">
+		<div class="scroll-text"><!-- 滚动文字 -->
+			<span>会有突如其来的惊喜，始料不及的运气！</span>
+		</div>
+		</div>
+		
+	    <div class="slideshow">
+			<div class="navigation-item">
+				
+				<img src="https://www.toopic.cn/public/uploads/small/163756299623163756299625.png" alt="图片">
+				<img src="https://www.toopic.cn/public/uploads/small/1637562996238163756299635.png" alt="图片">
+				<img src="https://www.toopic.cn/public/uploads/small/1637562997243163756299787.png" alt="图片">
+				<img src="https://www.toopic.cn/public/uploads/small/1637562995904163756299548.png" alt="图片">
+				<img src="https://www.toopic.cn/public/uploads/small/163756299463816375629942.png" alt="图片">
+				<img src="https://www.toopic.cn/public/uploads/small/1642752085916164275208589.png" alt="图片">
+				<img src="https://www.toopic.cn/public/uploads/small/164275050460816427505048.jpg" alt="图片">
+				
+				<img src="https://www.toopic.cn/public/uploads/small/164275050644516427505063.jpg" alt="图片">
+				<img src="https://www.toopic.cn/public/uploads/small/165804573748165804573697.png" alt="图片">
+				<img src="https://pic.netbian.com/uploads/allimg/230730/003405-169064844553de.jpg" alt="图片">
+				<img src="https://pic.netbian.com/uploads/allimg/230812/112028-1691810428b26b.jpg" alt="图片">
+				<img src="https://pic.netbian.com/uploads/allimg/230808/115949-1691467189681d.jpg" alt="图片">
+				<img src="https://pic.netbian.com/uploads/allimg/230807/174836-1691401716596e.jpg" alt="图片">
+				<img src="https://pic.netbian.com/uploads/allimg/230808/121202-16914679220bd2.jpg" alt="图片">
+				
+				
+			</div>
+	    </div>
+	  </div>
+	
+	
+	
+	
+	
+	
+	
+	<!-- 转盘时间 -->
+	<!-- <div >
+		
+		<div id="wrapper">
+		    <div class="timebox yuebox" id="yueBox"></div>
+		    <div class="timebox riqiBox" id="riqiBox"></div>
+		    <div class="timebox hourbox" id="hourbox"></div>
+		    <div class="timebox minutebox" id="minutebox"></div>
+		    <div class="timebox secondbox" id="secondbox"></div>
+		</div>
+		 
+		 
+		<script>
+		 
+		    let wrapper = document.getElementById("wrapper");
+		    let yueBox = document.getElementById("yueBox");
+		    let riqiBox = document.getElementById("riqiBox");
+		    let hourbox = document.getElementById("hourbox");
+		    let minutebox = document.getElementById("minutebox");
+		    let secondbox = document.getElementById("secondbox");
+		 
+		    /*
+		    * 找所有的东西标签函数
+		    * */
+		    let findSiblings = function( tag ){
+		        let parent = tag.parentNode;
+		        let childs = parent.children;
+		        let sb = [];
+		        for(let i=0 ; i <= childs.length-1 ; i++){
+		            if( childs[i]!==tag){
+		                sb[sb.length] = childs[i];
+		            }
+		        }
+		        return  sb ;
+		    };
+		 
+		    /*
+		    * 去掉所有兄弟的类
+		    * */
+		    let removeSiblingClass =function( tag ){
+		        let sb = findSiblings( tag );
+		        for(let i=0 ;  i <= sb.length-1 ; i++){
+		            sb[i].className = "";
+		        }
+		    };
+		 
+		    /*
+		    * 初始化月份函数
+		    * */
+		    let initMonth = function(){
+		      for(let i=1; i<=12; i++){
+		            let span = document.createElement("span");
+		            span.innerHTML = i+"月";
+		            yueBox.appendChild( span );
+		      }
+		    };
+		 
+		    // 初始化日期
+		    let initDate = function(){
+		        for(let i=1; i<=31; i++){
+		            let span = document.createElement("span");
+		            span.innerHTML = i+"日";
+		            riqiBox.appendChild( span );
+		        }
+		    };
+		 
+		    // 初始化小时，分钟，秒
+		    let initHour = function(){
+		        for(let i=0; i<=23; i++){
+		            let h = i ;
+		            let span = document.createElement("span");
+		            if( h<10){
+		                h="0"+h;
+		            }
+		            span.innerHTML = h +"点";
+		            hourbox.appendChild( span );
+		        }
+		    };
+		    let initMinute = function(){
+		        for(let i=0; i<=59; i++){
+		            let  f = i ;
+		            let span = document.createElement("span");
+		            if( f<10){
+		                f="0"+f;
+		            }
+		            span.innerHTML = f +"分";
+		            minutebox.appendChild( span );
+		        }
+		    };
+		    let initSecond = function(){
+		        for(let i=0; i<=59; i++){
+		            let  miao = i ;
+		            let span = document.createElement("span");
+		            if( miao<10){
+		                miao="0"+miao;
+		            }
+		            span.innerHTML = miao +"秒";
+		            secondbox.appendChild( span );
+		        }
+		    };
+		 
+		    // 时间文字样式切换函数
+		    let changeTime = function(tag){
+		        tag.className = "on";
+		        removeSiblingClass( tag );
+		    };
+		 
+		    /*
+		    * 初始化日历函数
+		    * */
+		    let initRili = function(){
+		        initMonth(); // 初始化月份
+		        initDate(); // 初始化日期
+		        initHour(); // 小时
+		        initMinute();
+		        initSecond();
+		    };
+		 
+		    /*
+		    * 展示当前时间
+		    * 参数：mydate 时间对象
+		    * */
+		    let  showNow = function( mydate ){
+		 
+		        let yue = mydate.getMonth() ;
+		        let riqi = mydate.getDate();
+		        let hour = mydate.getHours()  ;
+		        let minute = mydate.getMinutes();
+		        let second = mydate.getSeconds();
+		        // 时间文字样式切换函数
+		        changeTime( yueBox.children[yue] );
+		        changeTime( riqiBox.children[riqi-1] );
+		        changeTime( hourbox.children[hour] );
+		        changeTime( minutebox.children[minute] );
+		        changeTime( secondbox.children[second] );
+		 
+		    };
+		 
+		    // 展示时间圆圈函数
+		    // tag：目标
+		    // num：数字数量
+		    // dis：圆圈半径
+		    let textRound = function(tag,num,dis){
+		        let span = tag.children ;
+		        for(let i=0 ; i<=span.length-1; i++){
+		            span[i].style.transform="rotate("+ (360/span.length)*i+"deg)  translateX("+dis+"px)" ;
+		        }
+		    };
+		    /*
+		    * 旋转指定“圆圈”指定度数
+		    * */
+		    let rotateTag = function(tag , deg){
+		        tag.style.transform = "rotate("+deg+"deg)";
+		    };
+		 
+		    let main = function(){
+		        initRili(); // 初始化日历
+		 
+		        setInterval(function(){
+		            let mydate = new Date();
+		            showNow( mydate ); // 展示当前时间
+		        },1000);
+		 
+		        //  n秒后，摆出圆形
+		        setTimeout(function(){
+		            wrapper.className = "wrapper";
+		            textRound(yueBox,12,40);
+		            textRound(riqiBox,31,80);
+		            textRound(hourbox,24,120);
+		            textRound(minutebox,60,160);
+		            textRound(secondbox,60,200);
+		            setInterval(function(){
+		                let mydate = new Date();
+		                rotateTag( yueBox , -30*mydate.getMonth());
+		                rotateTag( riqiBox , -360/31*(mydate.getDate()-1) );
+		                rotateTag( hourbox , -360/24*mydate.getHours());
+		                rotateTag( minutebox , -6*mydate.getMinutes());
+		                rotateTag( secondbox , -6*mydate.getSeconds());
+		            },1000)
+		        },1000)
+		 
+		    };
+		    main();
+		   
+		</script>
+
+		
+	</div> -->
+	
+	
+	
+	
+  <div class="navbar">
+    <div class="navigation-item">
+      <a href="index.html" target="_blank">
+        <img src="images/logo/logo.png" alt="首页">
+        
+      </a >
+    </div>
+    <div class="navigation-item">
+      <a href="html/index/xx.html" target="_blank">
+        <img src="images/logo/xx.png" alt="消息">
+        
+      </a >
+    </div>
+    <div class="navigation-item">
+      <a href="html/index/gn.html" target="_blank">
+        <img src="images/logo/gn.png" alt="功能">
+        
+      </a >
+    </div>
+    <div class="navigation-item">
+      <a href="login.html" target="_blank">
+        <img src="images/logo/my.png" alt="我的">
+        
+      </a >
+    </div>
+  </div>
+</body>
+</html>
